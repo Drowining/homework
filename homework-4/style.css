@@ -1,0 +1,40 @@
+.open_sans {
+    font-family: "Open Sans", sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300px;
+}
+
+.smth2 {
+    font-family: "Open Sans", sans-serif;
+    text-decoration: line-through;
+    font-size: 20px;
+    font-weight: 300px;
+}
+
+.smth3 {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.smth4 {
+    font-family: "Open Sans" sans-serif;
+    word-spacing: 30px;
+    text-shadow: 0px 1px 2px #3d003d;
+    font-size: 30px;
+    color: black;
+    text-decoration: overline;
+    text-decoration-style: wavy;
+    text-decoration-color: #3d003d;
+}
+
+.smth5 {
+    font-family: "Open Sans" sans-serif;
+    letter-spacing: 5px;
+    text-decoration: underline;
+    font-size: 30px;
+    text-decoration-style: double;
+}
