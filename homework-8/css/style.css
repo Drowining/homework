@@ -1,0 +1,49 @@
+body {
+    background: #272727;
+}
+
+.container {
+    max-width: 900px;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.block {
+    position: relative;
+    display: block;
+    width: 250px;
+    height: 250px;
+    margin: 50% auto;
+    background: black;
+    border-radius: 20%;
+}
+
+.block:hover .line {
+    transition: background, 2s ;
+    background: linear-gradient(to left, #ffffff 50%, #fa5d4500 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+}
+
+.block:hover .text {
+    transition: 2.01s step-end;
+    color: green;
+}
+
+
+.line {
+    display: block;
+    width: 750px;
+    height: 30px;
+    transform: translate(-250px, -65px);
+    position: absolute;
+
+}
+
+
+.text {
+    transform: translate(100px, 110px);
+    font-size: 20px;
+    width: 60px;
+}
