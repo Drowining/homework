@@ -34,11 +34,14 @@
 
 .main {
     flex-grow: 1;
-
 }
 
 .main__about {
     padding: 140px 0;
+}
+
+.main__program {
+    padding-bottom: 145px;
 }
 
 .container {
@@ -48,6 +51,13 @@
     height: 100%;
 }
 
+
+.title {
+    font-family: 'Gabriola';
+    color: var(--accent-text);
+    font-size: 74px;
+    line-height: 0.82;
+}
 
 .button {
     width: 100%;
@@ -355,10 +365,6 @@
 }
 
 .hero__title {
-    font-family: 'Gabriola';
-    color: var(--accent-text);
-    font-size: 74px;
-    line-height: 0.82;
     margin-bottom: 30px;
 }
 
@@ -449,6 +455,7 @@
     overflow: hidden;
     position: relative;
     grid-row: 1/-1;
+    z-index: -1;
 }
 
 .about__img>img {
@@ -456,6 +463,7 @@
     height: 100%;
     object-fit: cover;
     object-position: 0 50%;
+
 }
 
 .about__img-control {
@@ -505,10 +513,7 @@
 .about__heading {}
 
 .about__title {
-    font-family: 'Gabriola';
     color: var(--accent-text);
-    font-size: 74px;
-    line-height: 0.82;
 }
 
 .about__title-text {
@@ -552,6 +557,316 @@
 
 
 /* ================================================================================ */
+.program {}
+
+.program__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 30px 15px;
+}
+
+.program__heading {}
+
+.program__title {
+    margin-bottom: 20px;
+}
+
+.program__text {}
+
+.program__tab-content {
+    margin-bottom: 40px;
+}
+
+
+.program__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.program__action {
+    display: grid;
+    grid-template: repeat(3, auto) / 1.65fr 1fr;
+    gap: 40px;
+    max-width: 501px;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.program__discount {
+    grid-row: 1 / 3;
+    border-radius: var(--border-radius);
+    background: var(--accent-bg);
+    font-size: 20px;
+    padding: 40px;
+
+}
+
+.program__discount-value {
+    display: block;
+    color: var(--accent-color);
+
+    font-family: 'Gabriola';
+    font-size: 74px;
+    line-height: .82;
+    margin: 0 0 7px 13%;
+    transform-origin: 0 0;
+    animation: discount-grow .8s linear infinite alternate;
+}
+
+@keyframes discount-grow {
+    0% {
+        transform: scale(1);
+        font-size: 74px;
+        color: var(--accent-color);
+    }
+
+    100% {
+        transform: translateX(3%) scale(1.1);
+        color: #FF9138;
+    }
+}
+
+.program__discount span {
+    font-size: 16px;
+    margin-left: 35%;
+}
+
+.program__price {}
+
+.program__price-text {
+    color: #CEAAD0;
+    line-height: 1.6;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.program__price-value {
+    font-family: 'Gabriola';
+    font-size: 32px;
+    line-height: 0.9;
+}
+
+.program__price-value--big {
+    color: var(--accent-text);
+    font-size: 50px;
+}
+
+.program__button {
+    grid-column: 1/-1;
+}
+
+.program__img img {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+.tab-controls {
+    display: flex;
+    gap: 26px;
+}
+
+.tab-controls__item {}
+
+.tab-controls__link {
+    display: block;
+    border-radius: 100px;
+    padding: 14px 30px;
+    box-shadow: 0px 4px 20px 0px #cec3b94d;
+    white-space: nowrap;
+
+    transition: var(--transition);
+}
+
+.tab-controls__link:hover {
+    background: #FFE0CB;
+}
+
+.tab-controls__link--active {
+    background: #FFE0CB;
+    box-shadow: 0px 4px 20px #cec3b94d;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content--show {
+    display: block;
+}
+
+.accordion-list {}
+
+.accordion-list__item {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--accent-color);
+
+    margin-bottom: 30px;
+}
+
+.accordion-list__item:last-child {
+    margin-bottom: 0px;
+}
+
+.accordion-list__item--opened {}
+
+.accordion-list__control {
+
+    color: var(--accent-text);
+    font-family: 'Gabriola';
+    font-size: 42px;
+    line-height: .9;
+
+    padding: 41px 30px;
+    width: 100%;
+    background: transparent;
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    transition: var(--transition);
+}
+
+.accordion-list__item--opened .accordion-list__control {
+    padding-bottom: 20px;
+}
+
+.accordion-list__control-title {}
+
+.accordion-list__control-icon {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--accent-color);
+    border-radius: 50%;
+
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+
+}
+
+.accordion-list__control-icon svg {
+    margin-left: 2px;
+}
+
+.accordion-list__control-icon path {
+    transition: var(--transition);
+}
+
+.accordion-list__control:hover .accordion-list__control-icon {
+    transform: rotate(90deg);
+    background: var(--accent-color);
+}
+
+.accordion-list__control:hover .accordion-list__control-icon path {
+    fill: var(--general-bg);
+}
+
+.accordion-list__item--opened:hover .accordion-list__control-icon {
+    transform: rotate(90deg);
+    background: var(--accent-color);
+}
+
+.accordion-list__item--opened:hover .accordion-list__control-icon path {
+    fill: var(--general-bg);
+}
+
+
+
+.accordion-content {
+    display: flex;
+    padding: 0 30px 40px;
+    gap: 80px;
+}
+
+.accordion-list__content-col:first-child {
+    max-width: 507px;
+    width: 100%;
+}
+
+.accordion-list__content-title {
+    text-transform: uppercase;
+    color: #CEAAD0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+
+}
+
+/* ======================================= */
+.accordion-list__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.accordion-list__item--opened .accordion-list__content {
+    max-height: 400px;
+    opacity: 1;
+}
+
+
+
+
+/* ================================== */
+.accordion-list__content-item {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.accordion-list__content-item:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-list__content-icon {
+    width: 24px;
+    height: 24px;
+    border: solid 1px #CEAAD0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+
+.accordion-list__text {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.accordion-list__item--opened .accordion-list__text {
+    opacity: 1;
+}
+
+.accordion-content__text {
+    max-width: 274px;
+}
+
+
+/* ===================================================== */
+
+
+
+
+
+/* ================================================ */
+
 
 .footer {
     color: var(--general-bg);
@@ -694,6 +1009,16 @@
         margin-top: 30px;
     }
 
+    /* ================================= */
+    .program__top {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tab-controls {
+        flex-wrap: wrap;
+    }
+
     /* =================== */
     .footer__inner {
         justify-content: space-between;
@@ -704,6 +1029,7 @@
         grid-column: 1 / -1;
         text-align: center;
     }
+
 
 
 }
@@ -719,6 +1045,17 @@
 
     .about__grid {
         grid-column: 1 / -1;
+    }
+
+    /* ========================== */
+
+    .accordion-list__control {
+        padding:25px 30px ;
+        font-size: 35px;
+    }
+
+    .accordion-content{
+        gap: 30px;
     }
 
 }
@@ -753,6 +1090,16 @@
         display: flex;
     }
 
+    /* ========================= */
+
+    .program__img {
+        display: none;
+    }
+
+    .program__action {
+        max-width: none;
+        grid-template: repeat(3, auto) / minmax(280px, 1fr) 1fr;
+        }
     /* ======================== */
 
     .footer__inner {
@@ -815,6 +1162,27 @@
     .about__grid {
         grid-template: none;
     }
+
+    /* ================================= */
+
+    .tab-controls {
+        gap: 10px;
+
+    }
+
+    .tab-controls__link {
+        padding: 6px 20px;
+    }
+    .accordion-content {
+        flex-direction: column;
+    }
+    .accordion-list__content-col:first-child{
+        max-width: none;
+    }
+
+    .accordion-content__text {
+        max-width: none;
+    }
 }
 
 @media (max-width:600px) {
@@ -823,14 +1191,19 @@
         padding: 60px 0 80px;
     }
 
+    .main__program {
+        padding: 0 0 80px;
+    }
+
+
+    .title {
+        font-size: 12vw;
+    }
+
     /* ============================= */
 
     .header__hero {
         padding-bottom: 80px;
-    }
-
-    .hero__title {
-        font-size: 12vw;
     }
 
 
@@ -843,11 +1216,6 @@
     .about__grid-item {
         padding: 10px 15px;
     }
-
-    .about__title {
-        font-size: 12vw;
-    }
-
     .about__img-control {
         right: 0;
         bottom: 0;
@@ -856,23 +1224,88 @@
         padding: 10px 15px;
         max-width: none;
     }
+
+    /* =========================== */
+
+    .program__title{
+        text-align: center;
+    }
+    .program__top{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .program__action {
+        grid-template: repeat(3,auto) / auto auto;
+        gap: 15px;
+    }
+
+    .program__discount {
+        grid-row: auto;
+        grid-column: 1/-1;
+        justify-self: center;
+    }
+
+    .tab-controls {
+        justify-content: center;
+    }
+
+    .accordion-list__item {
+        margin-bottom: 10px;
+    }
+
+    .accordion-list__control {
+        padding: 17px 30px;
+        font-size: 28px;
+    }
+
+    .accordion-list__control-icon {
+        width: 26px;
+        height: 26px;
+    }
+    .accordion-list__control-icon svg {
+        width: 10px;
+    }
+
+    
 }
 
-    @media (max-width:450px) {
-        .modal__img {
-            margin-top: -45px;
-            max-width: 50%;
-        }
-
-        .modal__title {
-            color: var(--accent-text);
-            font-family: 'Gabriola';
-            font-size: 35px;
-            line-height: 0.9;
-            margin-bottom: 10px;
-        }
-
-        .modal__window {
-            padding: 0 15px 45px ;
-        }
+@media (max-width:450px) {
+    .modal__img {
+        margin-top: -45px;
+        max-width: 50%;
     }
+
+    .modal__title {
+        color: var(--accent-text);
+        font-family: 'Gabriola';
+        font-size: 35px;
+        line-height: 0.9;
+        margin-bottom: 10px;
+    }
+
+    .modal__window {
+        padding: 0 15px 45px;
+    }
+    /* ============================ */
+    .program__action {
+        grid-template: none;
+    }
+    .program__price {
+        text-align: center;
+    }
+    
+    .accordion-list__control {
+        padding: 17px 15px;
+    }
+
+    .accordion-content {
+        padding: 0 15px 30px;
+    }
+
+    .accordion-list__content-item {
+        margin-bottom: 10px;
+    }
+
+    
+}
