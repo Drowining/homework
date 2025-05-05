@@ -21,15 +21,19 @@
 
 // =================================modal==================================
 
-const modal = document.querySelector('.modal')
-const imgGiftButton = document.querySelector('.about__img-button')
-const modalCancel = document.querySelector('.modal__cancel')
+const modal = document.querySelector('.modal');
+const imgGiftButton = document.querySelector('.about__img-button');
+const modalCancel = document.querySelector('.modal__cancel');
 
-imgGiftButton.addEventListener('click', () => modal.classList.add('modal--opened'))
+imgGiftButton.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    modal.classList.add('modal--opened');
+});
+
 modalCancel.addEventListener('click', (event) => {
-    event.preventDefault()
-    modal.classList.remove('modal--opened')
-})
+    event.preventDefault();
+    modal.classList.remove('modal--opened');
+});
 
 modal.addEventListener('click', (event) => {
     if (event.target === modal) {

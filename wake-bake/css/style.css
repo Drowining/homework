@@ -455,7 +455,7 @@
     overflow: hidden;
     position: relative;
     grid-row: 1/-1;
-    z-index: -1;
+    z-index: 0;
 }
 
 .about__img>img {
@@ -1023,6 +1023,7 @@
     .footer__inner {
         justify-content: space-between;
         grid-template: repeat(2, auto) / repeat(3, auto);
+        gap: 30px;
     }
 
     .footer__col:last-child {
@@ -1106,7 +1107,7 @@
         justify-content: center;
         grid-template: none;
         text-align: center;
-        gap: 50px;
+        gap: 20px;
     }
 
     .footer__col:first-child {
