@@ -26,7 +26,7 @@ const imgGiftButton = document.querySelector('.about__img-button');
 const modalCancel = document.querySelector('.modal__cancel');
 
 imgGiftButton.addEventListener('click', (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     modal.classList.add('modal--opened');
 });
 
@@ -72,12 +72,12 @@ function toggleTab(event) {
 // ==================Accordion====================================================
 document.querySelectorAll('.accordion-list__item').forEach(item => {
     const content = item.querySelector('.accordion-list__content');
-    
+
     content.style.maxHeight = '0';
     const text = content.querySelector('.accordion-content__text');
     text.style.opacity = '0';
 
-    item.querySelector('.accordion-list__control').addEventListener('click', function() {
+    item.querySelector('.accordion-list__control').addEventListener('click', function () {
         document.querySelectorAll('.accordion-list__item').forEach(otherItem => {
             if (otherItem !== item) {
                 otherItem.classList.remove('accordion-list__item--opened');
@@ -103,4 +103,36 @@ document.querySelectorAll('.accordion-list__item').forEach(item => {
             text.style.opacity = '0';
         }
     });
+});
+
+
+// ---------------------------slider-gallery-------------------------------------
+
+const swiper = new Swiper('.gallery__slider', {
+    spaceBetween: 15,
+    slidesPerView: 1.5,
+
+    pagination: {
+        el: '.gallery__pagination',
+        type: 'fraction'
+    },
+
+    navigation: {
+        nextEl: '.gallery__next',
+        prevEl: '.gallery__prev',
+    },
+
+    breakpoints: {
+        601: {
+            slidesPerView: 3,
+        },
+        801: {
+            spaceBetween: 32,
+        },
+        1101: {
+            slidesPerView: 4
+        },
+    }
+
+
 });
