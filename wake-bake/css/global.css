@@ -15,6 +15,10 @@
     background: var(--general-bg);
 }
 
+.modal-open {
+    overflow: hidden;
+}
+
 .body--opened-menu {
     overflow: hidden;
 }
@@ -41,7 +45,8 @@
 }
 
 .main__program,
-.main__gallery {
+.main__gallery,
+.main__testimonials {
     padding-bottom: 145px;
 }
 
