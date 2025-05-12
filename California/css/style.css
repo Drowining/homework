@@ -1,5 +1,9 @@
 /* ================GLOBAL========================= */
 
+html {
+    scroll-behavior: smooth 
+}
+
 .body {
     font-family: "Inter", "ReadexPro", sans-serif;
     line-height: 1.2;
@@ -679,6 +683,7 @@
     color: #fff;
     border: solid 1px #000;
 }
+
 .contact__button:hover {
     background: #000;
 }
@@ -1120,22 +1125,28 @@
         flex-direction: column;
     }
 
+
+
     /* ======================================== */
     .offers__cards {
-        grid-template-columns: 1.3fr 1.3fr 1.3fr 1.3fr;
-        grid-template-rows: 20rem;
-        gap: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 0.25fr);
+        gap: 15px;
     }
 
-    .product__title,
+    .product__title {
+        display: block;
+        font-family: "ReadexPro";
+    }
+
     .product__text {
         display: none;
     }
 
 
     .product-1 {
-        grid-column: 1/2;
-        grid-row: 1/5;
+        grid-column: 1/5;
+        grid-row: 1/2;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1166,8 +1177,8 @@
 
 
     .product-2 {
-        grid-column: 2/3;
-        grid-row: 1/5;
+        grid-column: 1/5;
+        grid-row: 2/3;
     }
 
     .product-2 img {
@@ -1176,13 +1187,14 @@
     }
 
     .product-3 {
-        grid-column: 3/4;
-        grid-row: 1/5;
+        flex-direction: column;
+        grid-column: 1/5;
+        grid-row: 3/4;
     }
 
     .product-4 {
-        grid-column: 4/5;
-        grid-row: 1/5;
+        grid-column: 1/5;
+        grid-row: 4/5;
         margin-bottom: 0;
         transform: translate(0);
         padding: 0 0;
@@ -1195,6 +1207,12 @@
     .product-4 img {
         padding-right: 0;
         padding-left: 0;
+    }
+
+    .cards__img {
+        width: 100%;
+        height: 90%;
+        object-fit: cover;
     }
 
     /* ======================================== */
@@ -1230,14 +1248,14 @@
 
 
     .contact__input {
-    padding: 10px;
-    width: 200px;
-}
+        padding: 10px;
+        width: 200px;
+    }
 
 
-.contact__button {
-    padding: 10px 33px;
-}
+    .contact__button {
+        padding: 10px 33px;
+    }
 
 
 }
